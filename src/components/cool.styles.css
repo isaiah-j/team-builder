@@ -1,0 +1,14 @@
+.friends-list{
+    height: 50vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+form{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
