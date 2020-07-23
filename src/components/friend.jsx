@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import './cool.styles.css'
 
 
-const Friend = ({ name , email , role}) => {
+const Friend = ({ first_name , last_name , email }) => {
     return (
         <div>
-            <h1>{name}</h1>
-            <span>{`EMAIL: ${email} ROLE: ${role}`}</span>
+            <div className="friend-container">
+                    <div className="person-info">
+                        <h2>{first_name} {last_name}</h2>
+                        <span>({email})</span>
+                </div>
+                
+            </div>
         </div>
+       
        
    
     )
