@@ -57,7 +57,7 @@ function App() {
 
 	return (
 		<div className="">
-			<Route exact path="/" render={() => <Form friends={friends} setFriends={setFriends} postUser={postUser}/>} />
+			<Route exact path="/" render={(props) => <Form history={props.history} friends={friends} setFriends={setFriends} postUser={postUser}/>} />
 			<Route path="/team" render={() => <FriendsList friends={friends} />} />
 		</div>
 	);

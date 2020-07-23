@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './cool.styles.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { TextField, Select, MenuItem, InputLabel, Checkbox } from '@material-ui/core';
 
 import * as Yup from 'yup';
 
-const Form = ({ friends, setFriends, postUser }) => {
+const Form = ({ friends, setFriends, postUser, history }) => {
 	const formSchema = Yup.object().shape({
 		first_name: Yup.string(),
 		email: Yup.string().email('Must be a valid email address.').required('Must include email address.'),
@@ -57,6 +57,7 @@ const Form = ({ friends, setFriends, postUser }) => {
 		formSchema.isValid(formValues).then((valid) => {
 			if (valid) {
 				postUser(formValues);
+				history.push('/team');
 			}
 			if (!valid) {
 				alert('Not valid');
